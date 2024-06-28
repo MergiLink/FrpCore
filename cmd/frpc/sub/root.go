@@ -51,7 +51,7 @@ func init() {
 
 var rootCmd = &cobra.Command{
 	Use:   "frpc",
-	Short: "frpc is the client of frp (https://github.com/MergiLink/Frp)",
+	Short: "frpc is the client of frp (https://github.com/MergiLink/FrpCore)",
 	RunE: func(cmd *cobra.Command, args []string) error {
 		if showVersion {
 			fmt.Println(version.Full())
