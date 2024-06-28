@@ -93,11 +93,11 @@ func PreCheck(
 		PreCheck:      true,
 	}, transactionID, msg.TypeNameNatHoleResp)
 	if err != nil {
-		return fmt.Errorf("获得NAT打洞信息 error: %v", err)
+		return fmt.Errorf("获得NAT打洞信息 错误: %v", err)
 	}
 	mm, ok := m.(*msg.NatHoleResp)
 	if !ok {
-		return fmt.Errorf("获得NAT打洞信息 error: invalid message type")
+		return fmt.Errorf("获得NAT打洞信息 错误: invalid message type")
 	}
 	natHoleRespMsg = mm
 
@@ -160,11 +160,11 @@ func ExchangeInfo(
 	var natHoleRespMsg *msg.NatHoleResp
 	m, err := transporter.Do(timeoutCtx, m, laneKey, msg.TypeNameNatHoleResp)
 	if err != nil {
-		return nil, fmt.Errorf("获得NAT打洞信息 error: %v", err)
+		return nil, fmt.Errorf("获得NAT打洞信息 错误: %v", err)
 	}
 	mm, ok := m.(*msg.NatHoleResp)
 	if !ok {
-		return nil, fmt.Errorf("获得NAT打洞信息 error: invalid message type")
+		return nil, fmt.Errorf("获得NAT打洞信息 错误: invalid message type")
 	}
 	natHoleRespMsg = mm
 
