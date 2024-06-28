@@ -283,7 +283,7 @@ func (svr *Service) login() (conn net.Conn, connector Connector, err error) {
 	svr.runID = loginRespMsg.RunID
 	xl.AddPrefix(xlog.LogPrefix{Name: "runID", Value: svr.runID})
 
-	xl.Infof("节点链接成功, 获得运行识别号 [%s]", loginRespMsg.RunID)
+	xl.Infof("节点连接成功, 获得运行识别号 [%s]", loginRespMsg.RunID)
 	return
 }
 
@@ -291,10 +291,10 @@ func (svr *Service) loopLoginUntilSuccess(maxInterval time.Duration, firstLoginE
 	xl := xlog.FromContextSafe(svr.ctx)
 
 	loginFunc := func() (bool, error) {
-		xl.Infof("正在链接节点...")
+		xl.Infof("正在连接节点...")
 		conn, connector, err := svr.login()
 		if err != nil {
-			xl.Warnf("无法链接到接待你: %v", err)
+			xl.Warnf("无法连接到节点: %v", err)
 			if firstLoginExit {
 				svr.cancel(cancelErr{Err: err})
 			}
