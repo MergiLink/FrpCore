@@ -14,7 +14,7 @@
 
 package version
 
-var version = "MergiLink_0.58.1_0ccc5b9"
+var version = "MergiLink_0.58.1_a35ee10"
 
 func Full() string {
 	return version
