@@ -9,10 +9,24 @@ cd source
 Linux Build
 ```
 rm -rf bin
+export GOOS=linux
+export GOARCH=amd64
 make
 cd bin 
 tar -czvf frp_linux_amd64.tar.gz *
 mv frp_linux_amd64.tar.gz ../
+cd ..
+```
+
+OpenBSD Build
+```
+rm -rf bin
+export GOOS=openbsd
+export GOARCH=amd64
+make
+cd bin 
+tar -czvf frp_linux_amd64.tar.gz *
+mv frp_openbsd_amd64.tar.gz ../
 cd ..
 ```
 
