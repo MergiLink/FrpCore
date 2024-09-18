@@ -35,6 +35,13 @@ cp -r "$REPO_DIR"/* "$LOCAL_FILES_DIR"/source
 if git status | grep -q "conflict"; then
   git status
 else
+ cd source
+ go get github.com/shirou/gopsutil/cpu
+ go get github.com/shirou/gopsutil/disk
+ go get github.com/shirou/gopsutil/host
+ go get github.com/shirou/gopsutil/load
+ go get github.com/shirou/gopsutil/mem
+ cd ..
  echo "cd source"
  echo "make"
 fi
